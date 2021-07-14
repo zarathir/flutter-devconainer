@@ -1,0 +1,32 @@
+{
+	"name": "Flutter",
+
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {"VARIANT": "focal"},
+	},
+
+	"runArgs": [
+	  "--device",
+	  "/dev/kvm",
+	  "--device",
+	  "/dev/dri:/dev/dri",
+	  "-v",
+	  "/tmp/.X11-unix:/tmp/.X11-unix",
+	  "-e",
+	  "DISPLAY"
+	],
+
+	"settings": {
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash"
+			},
+		},
+		"terminal.integrated.defaultProfile.linux": "bash"
+	},
+
+	"extensions": [
+		"dart-code.dart-code", 
+		"dart-code.flutter"],
+}
