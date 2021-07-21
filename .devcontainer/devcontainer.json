@@ -1,22 +1,22 @@
 {
 	"name": "Flutter",
-
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": {"VARIANT": "focal"},
+		"args": {
+			"VARIANT": "focal"
+		},
 	},
-
+	"remoteUser": "user",
 	"runArgs": [
-	  "--device",
-	  "/dev/kvm",
-	  "--device",
-	  "/dev/dri:/dev/dri",
-	  "-v",
-	  "/tmp/.X11-unix:/tmp/.X11-unix",
-	  "-e",
-	  "DISPLAY"
+		"--device",
+		"/dev/kvm",
+		"--device",
+		"/dev/dri:/dev/dri",
+		"-v",
+		"/tmp/.X11-unix:/tmp/.X11-unix",
+		"-e",
+		"DISPLAY"
 	],
-
 	"settings": {
 		"terminal.integrated.profiles.linux": {
 			"bash": {
@@ -25,8 +25,10 @@
 		},
 		"terminal.integrated.defaultProfile.linux": "bash"
 	},
-
 	"extensions": [
-		"dart-code.dart-code", 
-		"dart-code.flutter"],
+		"dart-code.dart-code",
+		"dart-code.flutter"
+	],
+	"workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/user/workspace,type=bind,consistency=delegated",
+	"workspaceFolder": "/home/user/workspace"
 }

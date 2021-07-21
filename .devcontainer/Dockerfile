@@ -36,6 +36,7 @@ RUN apt-get update \
   libxcomposite1 \
   libgl1-mesa-glx \
   sudo \
+  mesa-vulkan-drivers \
   && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 # create user
@@ -75,6 +76,3 @@ RUN curl -o flutter.tar.xz $FLUTTER_URL \
   && flutter emulators --create \
   && flutter update-packages
 
-COPY entrypoint.sh /usr/local/bin/
-COPY chown.sh /usr/local/bin/
-COPY flutter-android-emulator.sh /usr/local/bin/flutter-android-emulator
